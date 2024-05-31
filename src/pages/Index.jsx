@@ -8,6 +8,11 @@ const messagesData = [
   { id: 2, user: "Bob", text: "Hello! How are you?", avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1MDcxMzJ8MHwxfHNlYXJjaHwxfHxtYWxlJTIwYXZhdGFyfGVufDB8fHx8MTcxNzE1NzMxMnww&ixlib=rb-4.0.3&q=80&w=1080" },
 ];
 
+const friendsData = [
+  { id: 1, name: "Alice" },
+  { id: 2, name: "Bob" },
+];
+
 const Index = () => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
@@ -35,7 +40,7 @@ const Index = () => {
   return (
     <Container maxW="container.xl" height="100vh" display="flex" flexDirection="row" padding={0}>
       <Box width="30%" height="100%" borderRightWidth="1px" padding={4}>
-        <FriendsList onSelectFriend={handleSelectFriend} />
+        <FriendsList friends={friendsData} onSelectFriend={handleSelectFriend} />
       </Box>
       <Box width="70%" height="100%" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
         {selectedFriend ? (
